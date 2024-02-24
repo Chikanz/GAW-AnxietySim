@@ -1,0 +1,303 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 225627996, guid: ffea41b2ef7376143bee608c897e587a, type: 3}
+  m_Name: Train_Decals
+  m_EditorClassIdentifier: 
+  material: {fileID: 2100000, guid: da6d57661b434f34fbbd71caea37ceca, type: 2}
+  regions:
+  - name: Boonie
+    region:
+      serializedVersion: 2
+      x: 0.77197266
+      y: 0.38378906
+      width: 0.20947266
+      height: 0.084228516
+  - name: Voyd
+    region:
+      serializedVersion: 2
+      x: 0.52124023
+      y: 0.48779297
+      width: 0.2277832
+      height: 0.12719727
+  - name: Grilled
+    region:
+      serializedVersion: 2
+      x: 0.7595215
+      y: 0.47045898
+      width: 0.22875977
+      height: 0.14111328
+  - name: RIL3Z
+    region:
+      serializedVersion: 2
+      x: 0.5371094
+      y: 0.37158203
+      width: 0.21801758
+      height: 0.107910156
+  - name: Tag1
+    region:
+      serializedVersion: 2
+      x: 0.3674853
+      y: 0.41078526
+      width: 0.14477539
+      height: 0.118652344
+  - name: Tag2
+    region:
+      serializedVersion: 2
+      x: 0.4423828
+      y: 0.21875
+      width: 0.14770508
+      height: 0.13891602
+  - name: Tag3
+    region:
+      serializedVersion: 2
+      x: 0.5913086
+      y: 0.20263672
+      width: 0.16040039
+      height: 0.15527344
+  - name: DoNots
+    region:
+      serializedVersion: 2
+      x: 0.00390625
+      y: 0.7932129
+      width: 0.096191406
+      height: 0.11303711
+  - name: Camera
+    region:
+      serializedVersion: 2
+      x: 0.0036621094
+      y: 0.9086914
+      width: 0.091796875
+      height: 0.041748047
+  - name: Priority
+    region:
+      serializedVersion: 2
+      x: 0.0029296875
+      y: 0.9538574
+      width: 0.09301758
+      height: 0.04321289
+  - name: Disabled
+    region:
+      serializedVersion: 2
+      x: 0.099121094
+      y: 0.9152832
+      width: 0.032714844
+      height: 0.033203125
+  - name: Warning
+    region:
+      serializedVersion: 2
+      x: 0.09716797
+      y: 0.9536133
+      width: 0.096191406
+      height: 0.04272461
+  - name: EmergencyButton
+    region:
+      serializedVersion: 2
+      x: 0.18481445
+      y: 0.7919922
+      width: 0.057861328
+      height: 0.099365234
+  - name: JamerNut
+    region:
+      serializedVersion: 2
+      x: 0.103759766
+      y: 0.7937012
+      width: 0.076416016
+      height: 0.096191406
+  - name: BootyBuoys
+    region:
+      serializedVersion: 2
+      x: 0.0031738281
+      y: 0.0009765625
+      width: 0.28051758
+      height: 0.1977539
+  - name: Peace
+    region:
+      serializedVersion: 2
+      x: 0.7827067
+      y: 0.124456264
+      width: 0.067928076
+      height: 0.056726478
+  - name: Star
+    region:
+      serializedVersion: 2
+      x: 0.85644865
+      y: 0.015628483
+      width: 0.13826638
+      height: 0.11446671
+  - name: Tag4
+    region:
+      serializedVersion: 2
+      x: 0.7565546
+      y: 0.20445673
+      width: 0.2386046
+      height: 0.1613094
+  - name: Fish
+    region:
+      serializedVersion: 2
+      x: 0.66513723
+      y: 0.01852225
+      width: 0.1784566
+      height: 0.09034845
+  - name: Smiley
+    region:
+      serializedVersion: 2
+      x: 0.5683719
+      y: 0.03066585
+      width: 0.058837235
+      height: 0.059260823
+  - name: Smiley2
+    region:
+      serializedVersion: 2
+      x: 0.68166995
+      y: 0.12150005
+      width: 0.053488433
+      height: 0.05003167
+  - name: Dead
+    region:
+      serializedVersion: 2
+      x: 0.5615643
+      y: 0.11032793
+      width: 0.080718815
+      height: 0.07334739
+  - name: Alien
+    region:
+      serializedVersion: 2
+      x: 0.43659586
+      y: 0.03940926
+      width: 0.08752638
+      height: 0.14426608
+  - name: SuperS
+    region:
+      serializedVersion: 2
+      x: 0.30090857
+      y: 0.0110670505
+      width: 0.10553911
+      height: 0.22348468
+  - name: Heart
+    region:
+      serializedVersion: 2
+      x: 0.0032976065
+      y: 0.6589027
+      width: 0.11038055
+      height: 0.09763461
+  - name: Scribble
+    region:
+      serializedVersion: 2
+      x: 0.117568225
+      y: 0.65793115
+      width: 0.11427058
+      height: 0.09131998
+  - name: Scribble2
+    region:
+      serializedVersion: 2
+      x: 0.2958558
+      y: 0.5471601
+      width: 0.10334036
+      height: 0.08895457
+  - name: Device
+    region:
+      serializedVersion: 2
+      x: 0.008139149
+      y: 0.529969
+      width: 0.0865539
+      height: 0.12386483
+  - name: Pyramid
+    region:
+      serializedVersion: 2
+      x: 0.09663809
+      y: 0.53385496
+      width: 0.09676532
+      height: 0.1015206
+  - name: UFO
+    region:
+      serializedVersion: 2
+      x: 0.22496778
+      y: 0.39674824
+      width: 0.11983085
+      height: 0.13453013
+  - name: 101011010101
+    region:
+      serializedVersion: 2
+      x: 0.020485759
+      y: 0.4093776
+      width: 0.18194503
+      height: 0.10103479
+  - name: PP
+    region:
+      serializedVersion: 2
+      x: 0.40775913
+      y: 0.5459552
+      width: 0.096194506
+      height: 0.08870119
+  - name: Tag4
+    region:
+      serializedVersion: 2
+      x: 0.49173385
+      y: 0.6167472
+      width: 0.24936575
+      height: 0.14709604
+  - name: Tag5
+    region:
+      serializedVersion: 2
+      x: 0.75704026
+      y: 0.6125233
+      width: 0.21987319
+      height: 0.11286163
+  - name: Tag6
+    region:
+      serializedVersion: 2
+      x: 0.21230465
+      y: 0.24240726
+      width: 0.20665962
+      height: 0.14718056
+  - name: Tag7
+    region:
+      serializedVersion: 2
+      x: 0.020148197
+      y: 0.21583915
+      width: 0.18025368
+      height: 0.17148894
+  - name: Tag8
+    region:
+      serializedVersion: 2
+      x: 0.19473584
+      y: 0.5402739
+      width: 0.09687103
+      height: 0.094931304
+  - name: Doors
+    region:
+      serializedVersion: 2
+      x: 0.14171241
+      y: 0.900507
+      width: 0.09323466
+      height: 0.04789871
+  - name: EmergencySticker
+    region:
+      serializedVersion: 2
+      x: 0.24964051
+      y: 0.9096516
+      width: 0.07883723
+      height: 0.062027514
+  - name: AuthOfficer
+    region:
+      serializedVersion: 2
+      x: 0.24904858
+      y: 0.7890181
+      width: 0.14771669
+      height: 0.11632526
+  - name: Map
+    region:
+      serializedVersion: 2
+      x: 0.24870487
+      y: 0.6566418
+      width: 0.1566879
+      height: 0.12497342
