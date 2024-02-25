@@ -27,12 +27,12 @@ public class SitInteractor : MonoBehaviour
             {
                 if (Physics.Raycast(transform.position, transform.TransformDirection(Vector3.forward), out hit, 5, mask))
                 {
-                    print(hit.transform.name);
                     if (hit.collider.gameObject.CompareTag("SitPoint"))
                     {
 
                         var seat = hit.collider.gameObject.transform;
                         SetSitting(true, seat);
+                        return; 
                     }
                 }
             }
@@ -47,10 +47,19 @@ public class SitInteractor : MonoBehaviour
     private void SetSitting(bool isSitting, Transform seat)
     {
         this.sitting = isSitting;
-        player.transform.position = seat.position;
+        if (isSitting)
+        {
+            player.transform.position = seat.position;
+            player.transform.rotation = seat.rotation;
+            currentSeat = seat;
+        }
+        else
+        {
+            player.transform.position = seat.position + seat.forward * 0.5f;
+        }
+        
         player.GetComponent<CapsuleCollider>().isTrigger = isSitting;
         player.GetComponent<Rigidbody>().isKinematic = isSitting;
-        player.transform.rotation = seat.rotation;
         player.playerCanMove = !isSitting;
         player.enableHeadBob = !isSitting;
         // player.enabled = false;

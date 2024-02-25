@@ -12,10 +12,10 @@ public class VisionCone : MonoBehaviour
     private List<Transform> withinAngle;
 
     // Start is called before the first frame update
-    void Start()
+    void Awake()
     {
         Faces = GameObject.FindGameObjectsWithTag("Face");
-        withinAngle = new List<Transform>(20);
+        withinAngle = new List<Transform>(20000);
     }
 
     // Update is called once per frame
@@ -23,13 +23,23 @@ public class VisionCone : MonoBehaviour
     {
         foreach (var f in Faces)
         {
-            f.GetComponentInParent<Renderer>().material.color = Color.white;
+            f.GetComponent<Renderer>().material.color = Color.white;
         }
         
         GetTransformsWithinAngle();
         foreach (Transform transform1 in withinAngle)
         {
-            transform1.GetComponentInParent<Renderer>().material.color = Color.red;
+            //raycast to see if it's not blocked
+            RaycastHit hit;
+            if (Physics.Raycast(transform.position, transform1.position - transform.position, out hit, 999))
+            {
+                if (hit.collider.gameObject.CompareTag("Face"))
+                {
+                    transform1.GetComponent<Renderer>().material.color = Color.red;
+                }
+            }
+            // transform1.GetComponent<Renderer>().material.color = Color.red;
+
         }
         
     }
