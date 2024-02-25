@@ -42,10 +42,20 @@ public class PopHead : MonoBehaviour
         hasPlayed = true;
         
         //If camera is facing towards our forward, pop the head forward, otherwise flip the direction
-        direction = Vector3.Dot(cam.forward, -transform.right) > 0 ? transform.right : -transform.right;
+        // direction = Vector3.Dot(cam.forward, -transform.right) > 0 ? transform.right : -transform.right;
+        var dot = Vector3.Dot(cam.forward, -transform.right);
+        if (dot > 0)
+        {
+            direction = transform.right;
+            // Head.rotation *= Quaternion.Euler(0, 0, 180);
+        }
+        else
+        {
+            direction = -transform.right;
+        }
         Head.gameObject.SetActive(true);
-        
-        Head.rotation = Quaternion.LookRotation(-direction) * Quaternion.Euler(0,-90,90);
+
+        // Head.rotation = Quaternion.LookRotation(-direction, transform.up);
         HeadMove.Play(this);
     }
 
