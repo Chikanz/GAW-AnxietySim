@@ -58,8 +58,9 @@ public class CycleLookRotations : MonoBehaviour
     //Used for looking at the player
     public void ForceLook(Transform t)
     {
-        StopCoroutine(cycle());
-        StopCoroutine(LookAnim.Routine());
+        StopAllCoroutines();
+        // StopCoroutine(cycle());
+        // StopCoroutine(LookAnim.Routine());
         
         startRot = transform.rotation;
         target = t;

@@ -60,7 +60,7 @@ public class SitInteractor : MonoBehaviour
             //Death if you sit up without a goal
             if (ProgressMan.instance.currentGoal == null)
             {
-                GameMan.instance.Setdeath("Why did you just stand up for no reason?? are you crazy??");
+                GameMan.instance.Setdeath("it's not your stop dawg");
             }
             player.transform.position = seat.position + seat.forward * 0.5f;
         }

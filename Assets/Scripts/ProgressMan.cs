@@ -21,7 +21,7 @@ public class ProgressMan : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        SetGoal(GoalStrings.seatGoal, "why is that guy standing there's so many seats lol", 15);
+        SetGoal(GoalStrings.seatGoal, "there are so many seats dude just sit", 10);
         instance = this;
     }
 

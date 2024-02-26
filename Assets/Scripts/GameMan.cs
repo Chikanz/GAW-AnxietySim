@@ -7,6 +7,7 @@ public class GameMan : MonoBehaviour
 {
     public GameObject circle;
     [SerializeField] private TextMeshProUGUI deathText;
+    [SerializeField] private TextMeshProUGUI headerText;
     public FirstPersonController FPC;
 
     public static GameMan instance;
@@ -21,7 +22,11 @@ public class GameMan : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        if (!gameRunning && Input.GetMouseButton(0))
+        {
+            //Reload scene
+            UnityEngine.SceneManagement.SceneManager.LoadScene(0);
+        }
     }
 
     public void Setdeath(string reason)
@@ -38,6 +43,7 @@ public class GameMan : MonoBehaviour
         cam.GetComponent<VisionCone>().enabled = false;
         cam.GetComponent<SitInteractor>().enabled = false;
         cam.GetComponent<LookTriggerCamera>().enabled = false;
+        headerText.gameObject.SetActive(true);
         FPC.enableZoom = true;
         FPC.isZoomed = true;
         Invoke(nameof(fallOver), 2f);
