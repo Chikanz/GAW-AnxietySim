@@ -49,6 +49,8 @@ public class SitInteractor : MonoBehaviour
         this.sitting = isSitting;
         if (isSitting)
         {
+            ProgressMan.instance.ClearGoal(ProgressMan.GoalStrings.seatGoal);
+            ProgressMan.instance.ClearGoal(ProgressMan.GoalStrings.underSeat);
             player.transform.position = seat.position;
             player.transform.rotation = seat.rotation;
             currentSeat = seat;

@@ -7,6 +7,8 @@ public class LookTrigger : MonoBehaviour
 {
     public delegate void LookEvent(Transform Camera);
     public event LookEvent OnLook;
+
+    public float duration = 4;
     
     // Start is called before the first frame update
     void Start()

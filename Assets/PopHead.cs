@@ -41,6 +41,8 @@ public class PopHead : MonoBehaviour
         if (hasPlayed) return;
         hasPlayed = true;
         
+        print("Triggered pop head!");
+        
         //If camera is facing towards our forward, pop the head forward, otherwise flip the direction
         // direction = Vector3.Dot(cam.forward, -transform.right) > 0 ? transform.right : -transform.right;
         var dot = Vector3.Dot(cam.forward, -transform.right);
@@ -57,6 +59,12 @@ public class PopHead : MonoBehaviour
 
         // Head.rotation = Quaternion.LookRotation(-direction, transform.up);
         HeadMove.Play(this);
+
+        HeadMove.ChainAt(0.4f);
+        HeadMove.Chain += (sender, args) =>
+        {
+            ProgressMan.instance.SetGoal(ProgressMan.GoalStrings.underSeat, "wtf was that???", 7);
+        };
     }
 
     private void OnDrawGizmosSelected()
