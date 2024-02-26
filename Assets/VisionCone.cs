@@ -35,11 +35,12 @@ public class VisionCone : MonoBehaviour
             {
                 if (hit.collider.gameObject.CompareTag("Face"))
                 {
-                    transform1.GetComponent<Renderer>().material.color = Color.red;
+                    GameMan.instance.Setdeath("You made eye contact");
+                    
+                    hit.collider.gameObject.GetComponentInParent<CycleLookRotations>().enabled = false;
+                    hit.collider.gameObject.GetComponentInParent<CycleLookRotations>().ForceLook(transform);
                 }
             }
-            // transform1.GetComponent<Renderer>().material.color = Color.red;
-
         }
         
     }

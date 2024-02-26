@@ -8,7 +8,7 @@ public class ProgressMan : MonoBehaviour
 {
     public TextMeshProUGUI progressText;
     private float timer;
-    private Goal? currentGoal = null;
+    public Goal? currentGoal = null;
 
     public static ProgressMan instance;
     
@@ -55,6 +55,11 @@ public class ProgressMan : MonoBehaviour
             currentGoal = null;
             progressText.text = "";
         }
+    }
+    public void ForceClearGoal()
+    {
+        currentGoal = null;
+            progressText.text = "";
     }
     
     public struct Goal

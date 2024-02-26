@@ -14,6 +14,7 @@ public class CycleLookRotations : MonoBehaviour
 
     private Quaternion startRot;
     private Transform target;
+    public bool cyclingEnabled = true;
     
     // Start is called before the first frame update
     void Start()
@@ -31,8 +32,8 @@ public class CycleLookRotations : MonoBehaviour
                 Quaternion.Lerp(startRot, Quaternion.LookRotation(target.position - transform.position), val);
         };
         transform.rotation = Quaternion.LookRotation(GetNextTarget().position - transform.position);
-            
-        Invoke(nameof(NextPosition),Random.Range(CycleTimeRange.x, CycleTimeRange.y));
+
+        StartCoroutine(cycle());
     }
 
     // Update is called once per frame
@@ -41,7 +42,28 @@ public class CycleLookRotations : MonoBehaviour
         target = GetNextTarget();
         startRot = transform.rotation;
         LookAnim.Play(this);
-        Invoke(nameof(NextPosition),Random.Range(CycleTimeRange.x, CycleTimeRange.y));
+    }
+
+    IEnumerator cycle()
+    {
+        yield return new WaitForSeconds(Random.Range(CycleTimeRange.x, CycleTimeRange.y));
+
+        while (cyclingEnabled)
+        {
+            NextPosition();
+            yield return new WaitForSeconds(Random.Range(CycleTimeRange.x, CycleTimeRange.y));
+        }
+    }
+
+    //Used for looking at the player
+    public void ForceLook(Transform t)
+    {
+        StopCoroutine(cycle());
+        StopCoroutine(LookAnim.Routine());
+        
+        startRot = transform.rotation;
+        target = t;
+        LookAnim.Play(this);
     }
 
     Transform GetNextTarget()
