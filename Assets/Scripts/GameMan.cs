@@ -22,7 +22,7 @@ public class GameMan : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (!gameRunning && Input.GetMouseButton(0))
+        if (!gameRunning && (Input.GetMouseButton(0) || Input.GetButton("Fire1")))
         {
             //Reload scene
             UnityEngine.SceneManagement.SceneManager.LoadScene(0);
@@ -46,6 +46,7 @@ public class GameMan : MonoBehaviour
         headerText.gameObject.SetActive(true);
         FPC.enableZoom = true;
         FPC.isZoomed = true;
+        FPC.GetComponent<Rigidbody>().velocity = Vector3.zero;
         Invoke(nameof(fallOver), 2f);
         ProgressMan.instance.ForceClearGoal();
         GetComponent<AudioSource>().Play();

@@ -1,7 +1,9 @@
 {
   "dependencies": {
     "com.dook.tools": "https://github.com/Chikanz/DookTools.git#upm",
+    "com.unity.burst": "1.8.13",
     "com.unity.collab-proxy": "2.2.0",
+    "com.unity.collections": "2.1.4",
     "com.unity.feature.development": "1.0.1",
     "com.unity.postprocessing": "3.2.2",
     "com.unity.textmeshpro": "3.0.6",

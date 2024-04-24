@@ -23,7 +23,7 @@ public class SitInteractor : MonoBehaviour
         RaycastHit hit;
         if (!sitting)
         {
-            if (Input.GetKeyDown(KeyCode.E))
+            if (Input.GetKeyDown(KeyCode.E) || Input.GetButtonDown("Fire1"))
             {
                 if (Physics.Raycast(transform.position, transform.TransformDirection(Vector3.forward), out hit, 5, mask))
                 {
@@ -38,7 +38,7 @@ public class SitInteractor : MonoBehaviour
             }
         }
 
-        if (sitting && Input.GetKeyDown(KeyCode.E))
+        if (sitting && (Input.GetKeyDown(KeyCode.E) || Input.GetButtonDown("Fire1")))
         {
             SetSitting(false, currentSeat);
         }

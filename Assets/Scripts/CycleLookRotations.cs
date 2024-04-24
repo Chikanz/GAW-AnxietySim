@@ -39,6 +39,7 @@ public class CycleLookRotations : MonoBehaviour
     // Update is called once per frame
     void NextPosition()
     {
+        if (forcedLook) return;
         target = GetNextTarget();
         startRot = transform.rotation;
         LookAnim.Play(this);
@@ -56,11 +57,13 @@ public class CycleLookRotations : MonoBehaviour
     }
 
     //Used for looking at the player
+    private bool forcedLook = false;
     public void ForceLook(Transform t)
     {
+        forcedLook = true;
         StopAllCoroutines();
-        // StopCoroutine(cycle());
-        // StopCoroutine(LookAnim.Routine());
+        StopCoroutine(cycle());
+        StopCoroutine(LookAnim.Routine());
         
         startRot = transform.rotation;
         target = t;

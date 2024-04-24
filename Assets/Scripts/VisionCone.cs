@@ -39,6 +39,8 @@ public class VisionCone : MonoBehaviour
                 // print(hit.transform.name);
                 if (hit.collider.gameObject.CompareTag("Face"))
                 {
+
+                    StartCoroutine(ForceLook(face, 0.5f, 2.1f));
                     GameMan.instance.Setdeath("You made eye contact");
 
                     try
@@ -50,15 +52,39 @@ public class VisionCone : MonoBehaviour
                     {
                         print("Couldn't find CycleLookRotations");
                     }
+                    
+                    //Force camera to look at enemy's eyes
 
                     return;
                 }
             }
         }
-        
     }
     
-    public void GetTransformsWithinAngle()
+    //Rotate the camera to face the target
+    IEnumerator ForceLook(Transform target, float duration, float hangTime)
+    {
+        float time = 0;
+        Quaternion startRot = transform.rotation;
+        while (time < duration)
+        {
+            Quaternion endRot = Quaternion.LookRotation(target.position - transform.position);
+            transform.rotation = Quaternion.Slerp(startRot, endRot,Mathf.Clamp(time / duration, 0, 1));
+            time += Time.deltaTime;
+            yield return null;
+        }
+
+        while (time < hangTime)
+        {
+            Quaternion endRot = Quaternion.LookRotation(target.position - transform.position);
+
+            transform.rotation = Quaternion.Slerp(startRot, endRot,1);
+
+            time += Time.deltaTime;
+            yield return null;
+        }
+    }
+        public void GetTransformsWithinAngle()
     {
         withinAngle.Clear();
 
